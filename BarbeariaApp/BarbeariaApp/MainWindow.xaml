@@ -1,0 +1,21 @@
+﻿<Window x:Class="BarbeariaApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BarbeariaApp"
+        mc:Ignorable="d"
+        Title="Barber Shop" Height="500" Width="900">
+    <Grid RenderTransformOrigin="0.339,0.764" Background="#FF81CAE6">
+        <GroupBox HorizontalAlignment="Left" Height="254" Header="Tela Login" Margin="73,64,0,0" VerticalAlignment="Top" Width="494" BorderBrush="#FF0493E9" FontSize="16"/>
+        <Button Content="Cadastrar" HorizontalAlignment="Left" Margin="106,269,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.742,-1.05" Height="32" Width="77" Background="#FF534D72" FontSize="14"/>
+        <TextBox HorizontalAlignment="Left" Margin="160,103,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="341" Height="22" Background="#FFBADCE5"/>
+        <TextBox HorizontalAlignment="Left" Margin="160,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="341" Height="23" Background="#FFBADCE5"/>
+        <Label Content="Nome" HorizontalAlignment="Left" Margin="102,98,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.322,0.077" Height="32" Width="52" FontWeight="Bold"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="106,155,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.096,0.926" Height="33" Width="47" FontWeight="Bold"/>
+        <TextBox HorizontalAlignment="Left" Margin="160,217,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="341" Height="22" Background="#FFBADCE5"/>
+        <Label Content="Senha" HorizontalAlignment="Left" Margin="106,212,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.096,0.926" Height="32" Width="52" FontWeight="Bold"/>
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,141 @@
+﻿<UserControl x:Class="ProjetoVet.Views.TutorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ProjetoVet.Views"
+             mc:Ignorable="d" d:DesignHeight="600" d:DesignWidth="700"
+             Background="#FF8BCCEE">
+
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="ColorNavy" Color="#000080"/>
+        <Style TargetType="TextBlock" x:Key="Label">
+            <Setter Property="Foreground" Value="{StaticResource ColorNavy}"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Margin" Value="0, 10, 0, 5"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ColorNavy}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Background" Value="White"/>
+        </Style>
+        <Style TargetType="DatePicker">
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ColorNavy}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Background" Value="White"/>
+        </Style>
+        <Style TargetType="PasswordBox">
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ColorNavy}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Background" Value="White"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid Margin="30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Gerenciamento de Tutores" 
+                   FontSize="24" FontWeight="Bold" 
+                   Foreground="{StaticResource ColorNavy}" 
+                   Margin="0, 0, 0, 20"/>
+
+        <Expander Grid.Row="1" 
+                  x:Name="FormExpander" 
+                  Header="[+] Adicionar Novo Tutor" 
+                  FontSize="16" FontWeight="SemiBold"
+                  Foreground="{StaticResource ColorNavy}"
+                  Margin="0, 0, 0, 10" IsExpanded="False">
+
+            <StackPanel>
+                <Grid Margin="0, 10, 0, 20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="Nome:" Style="{StaticResource Label}"/>
+                        <TextBox x:Name="TxtNome"/>
+                        <TextBlock Text="CPF:" Style="{StaticResource Label}"/>
+                        <TextBox x:Name="TxtCpf"/>
+                        <TextBlock Text="Email:" Style="{StaticResource Label}"/>
+                        <TextBox x:Name="TxtEmail"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2">
+                        <TextBlock Text="Telefone:" Style="{StaticResource Label}"/>
+                        <TextBox x:Name="TxtTelefone"/>
+                        <TextBlock Text="Data Nasc.:" Style="{StaticResource Label}"/>
+                        <DatePicker x:Name="DpDataNascimento"/>
+                        <TextBlock Text="Status:" Style="{StaticResource Label}"/>
+                        <TextBox x:Name="TxtStatus"/>
+                    </StackPanel>
+                </Grid>
+
+                <StackPanel Orientation="Horizontal" Margin="0, 0, 0, 10">
+                    <Button x:Name="BtnSalvar" 
+            Content="Salvar" 
+            HorizontalAlignment="Left"
+            Click="ButtonSalvar_Click" 
+            Background="Navy" Foreground="White"
+            Padding="15, 8" MinWidth="100" FontWeight="Bold" BorderThickness="0"/>
+
+                    <Button x:Name="BtnCancelar" 
+            Content="Cancelar"
+            Margin="10,0,0,0"
+            Background="#FF6A6A78" Foreground="White"
+            FontWeight="Bold" BorderThickness="0"
+            Padding="15, 8" MinWidth="100"
+            Click="ButtonCancelar_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </Expander>
+
+        <StackPanel Grid.Row="2" Margin="0, 10, 0, 10">
+            <TextBlock Text="Pesquisar por Nome ou CPF:" Style="{StaticResource Label}"/>
+            <TextBox x:Name="TxtPesquisa"
+                     TextChanged="TxtPesquisa_TextChanged"/>
+        </StackPanel>
+
+        <DataGrid Grid.Row="3" 
+                  x:Name="TutoresDataGrid"
+                  AutoGenerateColumns="False" 
+                  IsReadOnly="True">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding PessoaID}" Width="Auto"/>
+                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" Width="2*"/>
+                <DataGridTextColumn Header="CPF" Binding="{Binding CPF}" Width="1*"/>
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="1*"/>
+
+                <DataGridTemplateColumn Header="Editar" Width="Auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="✏️" Background="Transparent" BorderThickness="0" FontWeight="Bold" FontSize="14" Foreground="#FF4A8DCA" Cursor="Hand" Click="ButtonEditar_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Excluir" Width="Auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="🗑️" Background="Transparent" BorderThickness="0" FontWeight="Bold" FontSize="14" Foreground="#FFC13939" Cursor="Hand" Click="ButtonExcluir_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</UserControl>

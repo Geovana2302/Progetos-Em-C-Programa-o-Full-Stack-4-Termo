@@ -1,0 +1,20 @@
+﻿ProjetoVet
+1.0.0.0
+
+winexe
+C#
+.cs
+C:\Users\geova\OneDrive\Documentos\Faculdade\2° ANO 2025\4° Termo\Programação Full Stack\Tarefas-Trabalhos\ProjetoVet\ProjetoVet\obj\Debug\net8.0-windows\
+ProjetoVet
+none
+false
+TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
+C:\Users\geova\OneDrive\Documentos\Faculdade\2° ANO 2025\4° Termo\Programação Full Stack\Tarefas-Trabalhos\ProjetoVet\ProjetoVet\App.xaml
+7-664451179
+
+341058078061
+2262000664696
+MainWindow.xaml;Views\AnimalView.xaml;Views\EspecieView.xaml;Views\FuncionarioView.xaml;Views\RacaView.xaml;Views\TutorView.xaml;Views\VeterinarioView.xaml;
+
+True
+
