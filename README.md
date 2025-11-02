@@ -22,8 +22,12 @@ Sistema de gestão de clínica veterinária, com cadastros de tutores, pets e ve
 ## 🧠 Tecnologias Utilizadas
 - **C#** (.NET Framework / .NET 6+)
 - **Windows Forms**  
-- **Entity Framework (em alguns projetos)**
+- **Framework de Interface (UI): WPF (Windows Presentation Foundation)**
+- **Entity Framework**
+-- **Acesso a Dados (ORM): Entity Framework Core (EF Core)**
+- **Banco de Dados: SQL Server Express LocalDB**
 - **Visual Studio 2022**
+
 
 ---
 
